@@ -55,3 +55,32 @@ let publisherList = publishStore.getAll()
 publisherStore.clean()
 
 ```
+### Query
+To query you must implement `RealmQuery` protocol. Simple usage shown below.
+```swift
+extension Publisher: RealmQuery{
+    enum Query: QueryType{
+        case name(String)
+        case surname(String)
+        
+        var predicate: NSPredicate?{
+            switch self {
+            case .name(let value):
+                return NSPredicate(format: "name == %@", value)
+            case .surname(let value):
+                return NSPredicate(format: "surname == %@", value)
+            }
+        }
+        
+        var sortDescriptors: [SortDescriptor]{
+            return [SortDescriptor(keyPath:"name")]
+        }
+    }
+}
+```
+To query objects just use filter function. It returns an array.
+```swift
+let publisherStore = RealmStore<Publisher>()
+publisherStore.insert(Publisher(name: "Volkan", surname: "Bicer"))
+let filteredPublishers = publisherStore.filter(with: .name("Volkan"))
+```
