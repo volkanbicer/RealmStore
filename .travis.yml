@@ -1,12 +1,8 @@
 language: objective-c
 osx_image: xcode9
+xcode_project: RealmStore.xcodeproj
+xcode_scheme: RealmStore
 
-env:
-  global:
-    - LANG=en_US.UTF-8
-    - LC_ALL=en_US.UTF-8
-  matrix:
-    - SCHEME="RealmStore"
 
 before_install:
 - brew update
@@ -15,6 +11,6 @@ before_install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
-- xcodebuild clean build -project RealmStore.xcodeproj -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c
-- xcodebuild test -project RealmStore.xcodeproj -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c
+- xcodebuild clean build -project "$xcode_project" -scheme "$xcode_scheme" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c
+- xcodebuild test -project "$xcode_project" -scheme "$xcode_scheme" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c
 
