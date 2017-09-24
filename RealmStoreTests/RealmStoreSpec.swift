@@ -42,7 +42,7 @@ class RealmStoreSpec: QuickSpec {
                 
                 expect(publisherStore.getAll().count).to(equal(3))
             }
-
+            
             it("cleans database"){
                 let publisher = Publisher(name: "Volkan", surname: "Bicer")
                 publisherStore.insert(publisher)
@@ -50,13 +50,26 @@ class RealmStoreSpec: QuickSpec {
                 
                 expect(publisherStore.getAll().count).to(equal(0))
             }
-
+            
             it("gets all item"){
-                for i in 1...2{
+                for _ in 1...2{
                     publisherStore.insert(Publisher(name: "Volkan", surname: "Bicer"))
                 }
                 
                 expect(publisherStore.getAll().count).to(equal(2))
+            }
+            
+            it("filters"){
+                expect(publisherStore.getAll().count).to(equal(0))
+                
+                
+                publisherStore.insert(Publisher(name: "Volkan", surname: "Bicer"))
+                publisherStore.insert(Publisher(name: "Agatha", surname: "Christie"))
+                
+                let filteredPublishers = publisherStore.filter(with: .name("Volkan"))
+                
+                expect(filteredPublishers).notTo(beNil())
+                expect(filteredPublishers.count).to(equal(1))
 
             }
         }
@@ -81,12 +94,33 @@ extension Publisher: RealmEntity{
         name = entity.name
         surname = entity.surname
     }
-
+    
     public var entity: PublisherEntity{
         let publisher = PublisherEntity()
         publisher.name = name
         publisher.surname = surname
         return publisher
+    }
+}
+
+
+extension Publisher: RealmQuery{
+    enum Query: QueryType{
+        case name(String)
+        case surname(String)
+        
+        var predicate: NSPredicate?{
+            switch self {
+            case .name(let value):
+                return NSPredicate(format: "name == %@", value)
+            case .surname(let value):
+                return NSPredicate(format: "surname == %@", value)
+            }
+        }
+        
+        var sortDescriptors: [SortDescriptor]{
+            return [SortDescriptor(keyPath:"name")]
+        }
     }
 }
 
