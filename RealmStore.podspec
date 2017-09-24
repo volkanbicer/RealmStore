@@ -4,9 +4,10 @@ Pod::Spec.new do |s|
   s.version = "1.0.0"
   s.license = { :type => "WTFPL", :file => "LICENSE" }
   s.summary = "A repository pattern implementation for Realm database"
-  s.homepage = "www.sozcu.com.tr"
+  s.homepage = "https://github.com/vbicer/RealmStore"
   s.author = { "Volkan Bicer" => "vlknbcr@gmail.com" }
-  s.source = { :path => '.' }
+  s.source = { :git => 'https://github.com/vbicer/RealmStore.git', :tag => s.version.to_s }
+
 
   s.ios.deployment_target = '8.0'
 
