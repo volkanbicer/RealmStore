@@ -62,7 +62,6 @@ class RealmStoreSpec: QuickSpec {
             it("filters"){
                 expect(publisherStore.getAll().count).to(equal(0))
                 
-                
                 publisherStore.insert(Publisher(name: "Volkan", surname: "Bicer"))
                 publisherStore.insert(Publisher(name: "Agatha", surname: "Christie"))
                 
