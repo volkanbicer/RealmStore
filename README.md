@@ -1,6 +1,6 @@
 # RealmStore
 
-A lightweight library base on [RealmSwift](https://github.com/realm/realm-cocoa). RealmSwift usage simple. RealStore provides simplest usage.
+A lightweight framework which provides abstraction for database operations, base on [RealmSwift](https://github.com/realm/realm-cocoa). RealmSwift usage simple. RealStore provides simplest usage.
 
 # Usage
 Create your own model:
