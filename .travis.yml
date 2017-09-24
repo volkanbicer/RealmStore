@@ -1,0 +1,20 @@
+language: objective-c
+osx_image: xcode9
+
+env:
+  global:
+    - LANG=en_US.UTF-8
+    - LC_ALL=en_US.UTF-8
+  matrix:
+    - SCHEME="RealmStore"
+
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+- carthage update --platform iOS
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+
+script:
+- xcodebuild clean build -project XLProductName.xcodeproj -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c
+- xcodebuild test -project XLProductName.xcodeproj -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c
+
