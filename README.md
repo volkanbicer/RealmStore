@@ -4,6 +4,7 @@
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RealmStore.svg)](https://img.shields.io/cocoapods/v/RealmStore.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Language](https://img.shields.io/badge/languages-swift-orange.svg)
+[![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/vbicer/realmstore)](http://clayallsopp.github.io/readme-score?url=https://github.com/vbicer/realmstore)
 
 A lightweight framework which provides abstraction for database operations, base on [RealmSwift](https://github.com/realm/realm-cocoa). RealmSwift usage simple. RealStore provides simplest usage.
 
