@@ -94,7 +94,7 @@ let filteredPublishers = publisherStore.filter(with: .name("Volkan"))
 # Installation
 RealmStore can be added to your project using [CocoaPods](https://cocoapods.org/) by adding the following line to your Podfile:
 ```
-pod 'RealmStore', :git => 'https://github.com/vbicer/RealmStore'
+pod 'RealmStore'
 ```
 
 If you're using [Carthage](https://github.com/Carthage/Carthage) you can add a dependency on RealmStore by adding it to your Cartfile:
