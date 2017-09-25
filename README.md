@@ -1,6 +1,7 @@
 # RealmStore
 
 [![Build Status](https://travis-ci.org/vbicer/RealmStore.svg?branch=master)](https://travis-ci.org/vbicer/RealmStore)
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RealmStore.svg)](https://img.shields.io/cocoapods/v/RealmStore.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Language](https://img.shields.io/badge/languages-swift-orange.svg)
 
