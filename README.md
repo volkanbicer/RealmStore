@@ -1,8 +1,10 @@
 # RealmStore
 
 [![Build Status](https://travis-ci.org/vbicer/RealmStore.svg?branch=master)](https://travis-ci.org/vbicer/RealmStore)
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RealmStore.svg)](https://img.shields.io/cocoapods/v/RealmStore.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Language](https://img.shields.io/badge/languages-swift-orange.svg)
+[![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/vbicer/realmstore)](http://clayallsopp.github.io/readme-score?url=https://github.com/vbicer/realmstore)
 
 A lightweight framework which provides abstraction for database operations, base on [RealmSwift](https://github.com/realm/realm-cocoa). RealmSwift usage simple. RealStore provides simplest usage.
 
@@ -92,7 +94,7 @@ let filteredPublishers = publisherStore.filter(with: .name("Volkan"))
 # Installation
 RealmStore can be added to your project using [CocoaPods](https://cocoapods.org/) by adding the following line to your Podfile:
 ```
-pod 'RealmStore', :git => 'https://github.com/vbicer/RealmStore'
+pod 'RealmStore'
 ```
 
 If you're using [Carthage](https://github.com/Carthage/Carthage) you can add a dependency on RealmStore by adding it to your Cartfile:
