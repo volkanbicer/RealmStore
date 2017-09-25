@@ -1,5 +1,6 @@
 language: objective-c
 osx_image: xcode9
+sudo: false
 xcode_project: RealmStore.xcodeproj
 xcode_scheme: RealmStore
 
