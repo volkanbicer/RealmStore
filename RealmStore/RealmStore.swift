@@ -31,9 +31,9 @@ public class RealmStore<T:RealmEntity>{
     }
     
     
-    public func insert(_ item: T){
+    public func insert(_ item: T, update: Bool = false){
         try! realm.write{
-            realm.add(item.entity)
+            realm.add(item.entity, update: update)
         }
     }
     
