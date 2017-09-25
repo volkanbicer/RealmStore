@@ -1,5 +1,9 @@
 # RealmStore
 
+[![Build Status](https://travis-ci.org/vbicer/RealmStore.svg?branch=master)](https://travis-ci.org/vbicer/RealmStore)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Language](https://img.shields.io/badge/languages-swift-orange.svg)
+
 A lightweight framework which provides abstraction for database operations, base on [RealmSwift](https://github.com/realm/realm-cocoa). RealmSwift usage simple. RealStore provides simplest usage.
 
 # Usage
