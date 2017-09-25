@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name = "RealmStore"
   s.version = "1.0.0"
-  s.license = { :type => "WTFPL", :file => "LICENSE" }
+  s.license = { :type => "MIT", :file => "LICENSE" }
   s.summary = "A repository pattern implementation for Realm database"
   s.homepage = "https://github.com/vbicer/RealmStore"
   s.author = { "Volkan Bicer" => "vlknbcr@gmail.com" }
