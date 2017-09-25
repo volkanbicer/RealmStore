@@ -13,14 +13,18 @@ import RealmSwift
 public class RealmStore<T:RealmEntity>{
     fileprivate let realm: Realm!
     
-    public init(_ inMemoryIdentifier: String? = nil) {
-        if inMemoryIdentifier != nil {
-            realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: inMemoryIdentifier))
-        } else {
-            realm = try! Realm();
-        }
+    
+    public init(){
+        realm = try! Realm()
     }
     
+    public init(inMemoryIdentifier: String) {
+            realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: inMemoryIdentifier))
+    }
+    
+    public init(with realmConfig: Realm.Configuration){
+        realm = try! Realm(configuration: realmConfig)
+    }
     
     public func getAll() -> [T]{
         return realm.objects(T.EntityType.self).flatMap { T($0) }

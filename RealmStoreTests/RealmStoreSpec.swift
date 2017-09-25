@@ -16,7 +16,7 @@ class RealmStoreSpec: QuickSpec {
     override func spec(){
         describe("Realm store"){
             
-            let publisherStore = RealmStore<Publisher>("test")
+            let publisherStore = RealmStore<Publisher>(inMemoryIdentifier: "RealmStoreSpec")
             
             afterEach{
                 publisherStore.clean()
