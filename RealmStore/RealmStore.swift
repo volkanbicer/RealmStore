@@ -65,4 +65,17 @@ extension RealmStore where T:RealmQuery{
         items = items.sorted(by: query.sortDescriptors)
         return items.flatMap { T($0) }
     }
+    
+    
+    public func delete(by query: T.Query){
+        var items = realm.objects(T.EntityType.self)
+        
+        if let predicate = query.predicate{
+            items = items.filter(predicate)
+        }
+        
+        try! realm.write {
+            realm.delete(items)
+        }
+    }
 }

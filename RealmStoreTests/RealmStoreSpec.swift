@@ -83,6 +83,21 @@ class RealmStoreSpec: QuickSpec {
                 expect(filteredPublishers.count).to(equal(1))
 
             }
+            
+            
+            it("delete items by query"){
+                expect(publisherStore.getAll().count).to(equal(0))
+                
+                publisherStore.insert(Publisher(id: 0, name: "Volkan", surname: "Bicer"))
+                publisherStore.insert(Publisher(id: 1, name: "Uras", surname: "Bicer"))
+                publisherStore.insert(Publisher(id: 2, name: "Volkan", surname: "D"))
+
+                
+                publisherStore.delete(by: .name("Volkan"))
+                
+                expect(publisherStore.getAll().count).to(equal(1))
+                
+            }
         }
     }
     
